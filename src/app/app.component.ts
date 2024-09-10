@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Superviseme Me';
-  
+
   constructor(){}
-  
+
   ngOnInit() : void {}
-  
+
 }
