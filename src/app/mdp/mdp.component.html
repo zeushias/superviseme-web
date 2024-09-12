@@ -1,0 +1,86 @@
+<!-- Navbar & Hero Start -->
+<div class="container-fluid nav-bar sticky-top px-4 py-2 py-lg-0">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a href="" class="navbar-brand p-0">
+      <h1 class="display-6 text-dark"><i class="fas fa-graduation-cap text-primary me-3"></i>SuperviseMe</h1>
+      <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+    <!-- menus start-->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto py-0">
+        <a routerLink="/admin" class="nav-item nav-link active">Home</a>
+        <a routerLink="/mdp" class="nav-item nav-link">Changer MDP</a>
+        <a routerLink="/profil" class="nav-item nav-link">Profil</a>
+        <a routerLink="/affectation" class="nav-item nav-link">Affectation</a>
+        <a routerLink="/importation" class="nav-item nav-link">Importations</a>
+        <a routerLink="/stage" class="nav-item nav-link">Stages</a>
+        <a routerLink="/personne" class="nav-item nav-link">Personnes</a>
+        <a routerLink="/entreprise" class="nav-item nav-link">Entreprises</a>
+        <a routerLink="/universite" class="nav-item nav-link">Université</a>
+      </div>
+    </div>
+    <!-- menus end -->
+
+  </nav>
+</div>
+<!-- Navbar & Hero End -->
+
+
+<!-- mdp Start -->
+<div class="container-fluid service py-5" style="margin-top: 100px;">
+  <div class="container service-section py-5">
+
+    <div class="row g-4">
+      <div class="col-0 col-md-3 col-lg-2 col-xl-2"></div>
+      <div class="col-xl-6 wow fadeInUp">
+        <div class="bg-light p-5 rounded h-100">
+          <h4 class="text-primary mb-4">Changer de mot de passe</h4>
+
+          <form>
+            <div class="row g-4">
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="password" class="form-control border-0" id="oldEmail" placeholder="Votre ancien email">
+                  <label for="oldEmail">Votre ancien email</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="password" class="form-control border-0" id="newEmail" placeholder="Votre nouveau email">
+                  <label for="newEmail">Votre nouveau email</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="password" class="form-control border-0" id="confirmEmail"
+                         placeholder="Confirmer votre nouveau email">
+                  <label for="confirmEmail">Confirmer votre nouveau email</label>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-6">
+                <div class="form-floating">
+                  <button type="submit" class="btn btn-primary w-100 py-3">Modifier</button>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-6">
+                <div class="form-floating">
+                  <button type="reset" class="btn btn-primary w-100 py-3">Annuler</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-0 col-md-1 col-lg-2 col-xl-2"></div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->

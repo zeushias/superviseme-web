@@ -1,8 +1,9 @@
 export class User {
+
   id!: number;
   email!: string;
   password!: string;
-  username
+  username!: string;
 
   actif!: boolean;
 

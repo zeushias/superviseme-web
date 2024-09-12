@@ -15,6 +15,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+    storeToken(token: string) {
+      localStorage.setItem('jwtToken', token);
+    }
+
   login(credentials): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
       username: credentials.username,

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  baseURL: 'http://localhost:8080/superviseme/
+  baseURL: 'http://localhost:8005/superviseme/'
 };
 
 /*

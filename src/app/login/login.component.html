@@ -47,22 +47,33 @@
             <div class="ticket-form p-5">
               <h2 class="text-dark text-uppercase mb-4">Authentification</h2>
 
-              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <form (ngSubmit)="onSubmit()">
                 <div class="row g-4">
-                  <div class="col-12">
-                    <input type="text" class="form-control border-0 py-2" id="email" placeholder="Your Email"
-                            name="email" [(ngModel)]="loginForm.email" required #username="ngModel">
-                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && email.invalid">Email is require</div>
+
+                  <div class="col-12" *ngIf="showWrongMsg">
+                    <p class="alert alert-warning">
+                      <strong>Les informations saisies sont erronées</strong>
+                    </p>
+                  </div>
+
+                  <div class="col-12" *ngIf="showRequiredMsg">
+                    <p class="alert alert-warning">
+                      <strong>Veuillez saisir l'email et le password</strong>
+                    </p>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" class="form-control border-0 py-2" id="password" placeholder="Your Password"
-                           name="password" [(ngModel)]="loginForm.password" required #username="ngModel">
-                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">Password is require</div>
+                    <input type="text" [(ngModel)]="email" class="form-control border-0 py-2" id="email" placeholder="Votre Email"
+                            name="email">
                   </div>
 
                   <div class="col-12">
-                    <button type="submit" class="btn btn-primary w-100 py-2 px-5">Connect Now</button>
+                    <input type="text" [(ngModel)]="password" class="form-control border-0 py-2" id="password" placeholder="Votre Password"
+                           name="password">
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100 py-2 px-5">Connectez vous</button>
                   </div>
                 </div>
               </form>

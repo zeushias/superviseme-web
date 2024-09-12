@@ -1,0 +1,103 @@
+<!-- Navbar & Hero Start -->
+<div class="container-fluid nav-bar sticky-top px-4 py-2 py-lg-0">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a href="" class="navbar-brand p-0">
+      <h1 class="display-6 text-dark"><i class="fas fa-graduation-cap text-primary me-3"></i>SuperviseMe</h1>
+      <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+    <!-- menus start-->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto py-0">
+        <a routerLink="/admin" class="nav-item nav-link active">Home</a>
+        <a routerLink="/mdp" class="nav-item nav-link">Changer MDP</a>
+        <a routerLink="/profil" class="nav-item nav-link">Profil</a>
+        <a routerLink="/affectation" class="nav-item nav-link">Affectation</a>
+        <a routerLink="/importation" class="nav-item nav-link">Importations</a>
+        <a routerLink="/stage" class="nav-item nav-link">Stages</a>
+        <a routerLink="/personne" class="nav-item nav-link">Personnes</a>
+        <a routerLink="/entreprise" class="nav-item nav-link">Entreprises</a>
+        <a routerLink="/universite" class="nav-item nav-link">Université</a>
+      </div>
+    </div>
+    <!-- menus end -->
+
+  </nav>
+</div>
+<!-- Navbar & Hero End -->
+
+
+<!-- Importation Start -->
+<div class="container-fluid service py-5" style="margin-top: 100px;">
+  <div class="container service-section py-5">
+
+    <div class="row g-4">
+      <div class="col-0 col-md-3 col-lg-2 col-xl-2"></div>
+      <div class="col-xl-6 wow fadeInUp">
+        <div class="bg-light p-5 rounded h-100">
+          <h4 class="text-primary mb-4">Importation de fichiers csv</h4>
+
+          <form>
+            <div class="row g-4">
+
+              <div class="col-12" *ngIf="showExportMsg">
+                <p class="alert alert-warning">
+                  <strong>Veuillez sélectionner le type</strong>
+                </p>
+              </div>
+
+              <div class="col-12" *ngIf="showImportMsg">
+                <p class="alert alert-warning">
+                  <strong>Veuillez sélectionner le type et un fichier csv</strong>
+                </p>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <select class="form-control border-2" id="type" placeholder="Sélectionner le type d'importation" [(ngModel)]="type" (change)="onChange($event)">
+                    <option></option>
+                    <option>Personnes</option>
+                    <option>Entreprises</option>
+                    <option>Stages</option>
+                    <option>Affectations</option>
+                  </select>
+                  <label for="type">Sélectionner le type d'importation</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="file" class="form-control border-2" id="import" placeholder="Votre fichier csv"
+                  accept=".csv">
+                  <label for="import">Votre fichier csv</label>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-4">
+                <div class="form-floating">
+                  <button (click)="exporter()" class="btn btn-primary w-100 py-3">Exporter</button>
+                </div>
+              </div>
+              <div class="col-lg-12 col-xl-4">
+                <div class="form-floating">
+                  <button (click)="importer($event)" class="btn btn-primary w-100 py-3">Importer</button>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-4">
+                <div class="form-floating">
+                  <button type="reset" class="btn btn-primary w-100 py-3">Annuler</button>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-0 col-md-1 col-lg-2 col-xl-2"></div>
+    </div>
+  </div>
+</div>
+<!-- Importation End -->

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 //import { UserService } from './user.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { User } from '../classes/user';
 
 @Component({
@@ -12,36 +12,26 @@ import { User } from '../classes/user';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: any = {};
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
+  user: User = new User();
+  email: string = '';
+  password: string = '';
+  showWrongMsg: boolean = false;
+  showRequiredMsg: boolean = false;
+  message: any;
 
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private tokenStorage: TokenStorageService) {}
+  constructor(private fb: FormBuilder, private router: Router) {
+
+  }
 
   ngOnInit(): void {
-      if (this.tokenStorage.getToken()) {
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-      }
+
   }
 
   onSubmit(): void {
-    this.authService.login(this.loginForm.username, this.loginForm.password).subscribe(
-            data => {
-              this.authService.storeToken(data.token);
-              console.log('Login successful, token stored.');
-            },
-            error => {
-              console.error('Login failed', error);
-            }
-    );
+    if (this.controle()) {
+      this.showRequiredMsg = true;
+    }
     this.getHomeForAdmin();
-  }
-
-  login() {
-
   }
 
   getHomeForAdmin() {
@@ -53,6 +43,9 @@ export class LoginComponent implements OnInit {
   }
 
   controle(): boolean {
+      if (this.user.email === '' || this.user.email === null || this.user.password === '' || this.user.password === null) {
+        return true;
+      }
       return false;
   }
 
