@@ -13,6 +13,8 @@ import { ImportationComponent } from './importation/importation.component';
 import { StageComponent } from './stage/stage.component';
 import { PersonneComponent } from './personne/personne.component';
 import { UniversiteComponent } from './universite/universite.component';
+import { AnneeComponent } from './annee/annee.component';
+
 const routes: Routes = [
   // login
   {path: 'login', component: LoginComponent},
@@ -26,6 +28,7 @@ const routes: Routes = [
   {path: 'stage', component: StageComponent},
   {path: 'personne', component: PersonneComponent},
   {path: 'universite', component: UniversiteComponent},
+  {path: 'annee', component: AnneeComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 
 ];

@@ -1,6 +1,6 @@
-export class User {
+export class Personne {
 
-  idPersonne!: number;
+  id!: number;
   email!: string;
   nomPrenoms!: string;
   telephone!: string;

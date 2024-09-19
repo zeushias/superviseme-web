@@ -26,6 +26,7 @@ import { StageComponent } from './stage/stage.component';
 import { PersonneComponent } from './personne/personne.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
 import { UniversiteComponent } from './universite/universite.component';
+//import { AnneeComponent } from './annee/annee.component';
 
 @NgModule({
 
